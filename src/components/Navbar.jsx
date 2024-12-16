@@ -1,29 +1,35 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import { SiAppium } from "react-icons/si";
 
 const Navbar = () => {
-  const {user, signOutUser} = useContext(AuthContext)
+  const { user, signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
     signOutUser()
-    .then(() =>{
-      console.log('successful sign out')
-    })
-    .catch(error =>{
-      console.log('failed to sign out')
-    })
-  }
+      .then(() => {
+        console.log("successful sign out");
+      })
+      .catch((error) => {
+        console.log("failed to sign out");
+      });
+  };
 
-  const links = <>
+  const links = (
+    <>
       <li>
-              <a>Item 1</a>
-            </li>
-            
-            <li>
-              <a>Item 3</a>
-            </li>
-  </>
+        <NavLink to="/">Home</NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+    </>
+  );
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -48,27 +54,34 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-           {links}
+            {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">
+          <SiAppium className="text-blue-900" />
+          <h3 className=" font-bold text-3xl">Job Portal</h3>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        {
-          user? <>
-          <button onClick={handleSignOut}
-           className="btn btn-sm">Sign Out</button>
-          </> : <>
-          <Link className="btn btn-sm" to="/register">Register</Link>
-          <Link className="btn btn-sm" to="/signIn">Sign in</Link>
+        {user ? (
+          <>
+            <button onClick={handleSignOut} className="btn btn-sm">
+              Sign Out
+            </button>
           </>
-        }
-        
+        ) : (
+          <>
+            <Link className="btn btn-sm" to="/register">
+              Register
+            </Link>
+            <Link className="btn btn-sm" to="/signIn">
+              Sign in
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

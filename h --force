@@ -1,0 +1,23 @@
+[33mcommit a1400c63fae74731890334c215b616e73a2f1ec2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: tammykhan <tammykhan543@gmail.com>
+Date:   Sun Dec 15 14:08:07 2024 +0600
+
+    Implement Firebase authentication with AuthContext provider
+
+[33mcommit 1ac8a2a5e7a2b1643e73c7bf070934d9976a9a40[m
+Author: tammykhan <tammykhan543@gmail.com>
+Date:   Sun Dec 15 10:46:30 2024 +0600
+
+    firebase project setup
+
+[33mcommit 85b45a7a7857449c9dccb36c68b8a4b6787c47ee[m
+Author: tammykhan <tammykhan543@gmail.com>
+Date:   Sun Dec 15 10:27:08 2024 +0600
+
+    Implement form value retrieval in registration form and add Lottie animation
+
+[33mcommit e5707ffe6237a19e210550b48fd73969b47c76fd[m
+Author: tammykhan <tammykhan543@gmail.com>
+Date:   Sun Dec 15 10:13:03 2024 +0600
+
+    Set up React Router, Tailwind CSS, DaisyUI, and Navbar with Registration page
