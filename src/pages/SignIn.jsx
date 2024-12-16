@@ -54,6 +54,10 @@ const SignIn = () => {
           <button className="btn btn-primary">Sign In</button>
         </div>
       </form>
+      <div className="divider">OR</div>
+          <div className="m-5">
+          <SocialLogin></SocialLogin>
+          </div>
     </div>
   </div>
 </div>
