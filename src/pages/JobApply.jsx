@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 
 const JobApply = () => {
   const {id} = useParams();
   const {user} = useAuth();
-  console.log(id, user);
+  const navigate = useNavigate();
 
   const submitJobApplication = e => {
     e.preventDefault();
@@ -42,6 +42,7 @@ const JobApply = () => {
         showConfirmButton: false,
         timer: 1500
       });
+      navigate('/myApplications')
     }
   })
 
