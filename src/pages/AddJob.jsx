@@ -1,11 +1,27 @@
 import React from "react";
 
 const AddJob = () => {
+  
+  const handleAddJob = e => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const initialData = Object.fromEntries(formData.entries());
+    console.log(initialData);
+
+    const { min, max, currency, ...newJob } = initialData;
+    console.log(min, max, currency, newJob)
+    newJob.salaryRange = { min, max, currency }
+    console.log(newJob)
+
+
+  }
+
   return (
     <div>
       <h2 className="text-3xl">Post a new job</h2>
 
-      <form className="card-body">
+      <form onSubmit={handleAddJob} className="card-body">
         {/* job title */}
         <div className="form-control">
           <label className="label">
@@ -151,7 +167,7 @@ const AddJob = () => {
 
         <div className="form-control">
           
-          <select className="select select-ghost w-full max-w-xs">
+          <select name="currency" className="select select-ghost w-full max-w-xs">
             <option disabled selected>
               currency
             </option>
